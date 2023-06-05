@@ -62,5 +62,21 @@ export const packs = [
         "airportTransfer": true,
         "transportationType": "Minivan Premium",
         "transferCost": 0,
+    },
+    {
+        "id": "ABC004",
+        "destination": "Disney Orlando",
+        "description": "Paquete 5 dias a Disneyland Orlando, Hotel y desayuno incluido",
+        "duration": 5,
+        "stock": 42,
+        "hotel": "Disneyland Orlando Hotel",
+        "meals": "Desayuno incluido",
+        "starHotel": 4,
+        "capacity": 4,
+        "price": 240000,
+        "airline": "American Airlines",
+        "airportTransfer": true,
+        "transportationType": "Minibus Premium",
+        "transferCost": 0,
     }
 ]
