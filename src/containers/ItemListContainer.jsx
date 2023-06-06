@@ -8,13 +8,13 @@ export const ItemListContainer = () => {
     
     const [loading, setLoading] = useState(true);
     setTimeout(function() {
-        // Código a ejecutar después de 3 segundos
+        // Código a ejecutar después de x segundos
         setLoading(false);
-      }, 2000);
+      }, 1000);
     
     return (
     <>
-        { loading ? <Loading /> : <ItemList /> }
+      { loading ? <Loading /> : <ItemList /> }
     </>
   )
 }

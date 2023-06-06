@@ -1,16 +1,16 @@
 
 import React from 'react'
-import { Item } from './Item'
+import { ItemCard } from '../components'
 import { packs } from '../data/packs'
 
 export const ItemList = () => {
   
   return (
     <>
-      <div className='row' style={{ marginLeft: 0, marginRight: 0 }}>
+      <div className='row row-cols-2 g-3'>
         {
           packs.map( pack => (
-            <Item key={pack.id} {...pack}/>
+            <ItemCard key={pack.id} {...pack}/>
           ))
         }
       </div>

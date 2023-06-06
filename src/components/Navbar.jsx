@@ -1,30 +1,65 @@
 
 import React from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+      navigate('/login', {
+          replace: true
+      });
+  }
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">Aterrizar</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Paquetes</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Disney</a>
-              </li>
-            </ul>
-            <form className="d-flex" role="search" style={{margin:"auto"}}>
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <i className="bi bi-cart4" style={{fontSize:"30px"}}></i>
+      <nav className="navbar navbar-expand-sm navbar-light bg-light p-2">
+
+        <Link
+          className="navbar-brand"
+          to="/"
+        >
+          Aterrizar
+        </Link>
+
+        <div className="navbar-collapse">
+          <div className="navbar-nav">
+
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/"
+            >
+              Paquetes
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/"
+            >
+              Bariloche
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/search"
+            >
+              Search
+            </NavLink>
           </div>
+        </div>
+
+        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+          <ul className="navbar-nav ml-auto">
+            <span className='nav-item nav-link text-primary'>
+              Facundo
+            </span>
+            <button
+              className='nav-item nav-link btn'
+              onClick={onLogout}>
+              Logout
+            </button>
+          </ul>
         </div>
       </nav>
     </>
