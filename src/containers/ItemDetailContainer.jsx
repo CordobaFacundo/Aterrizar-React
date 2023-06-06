@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Loading } from '../components/Loading/Loading';
 import { ItemDetail } from '../components/ItemDetail';
-import { getPackById } from '../helpers/getPackById';
+import { getPackById, getPackByName } from '../helpers';
+
 
 export const ItemDetailContainer = () => {
   
@@ -13,12 +14,13 @@ export const ItemDetailContainer = () => {
     setLoading(false);
   }, 1000);
 
-  const { id } = useParams();
-  const pack = getPackById( id );
+  const { id, destination } = useParams();
+  const packByID = getPackById( id );
+  console.log(destination)
   
   return (
     <>
-        { loading ? <Loading /> : <ItemDetail { ...pack }  /> }
+        { loading ? <Loading /> : <ItemDetail { ...packByID }  /> }
     </>
   )
 }

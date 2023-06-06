@@ -7,7 +7,9 @@ export const getPackByName = ( name = '') => {
     
     if( name.length === 0 ) return [];
 
-    return packs.filter(
+    const test = packs.find(
         pack => pack.destination.toLocaleLowerCase().includes(name)
     );
+
+    return test ? test.id : null;
 }

@@ -20,7 +20,7 @@ export const Navbar = () => {
           className="navbar-brand"
           to="/"
         >
-          Aterrizar
+          <i class="bi bi-airplane-fill"></i> Aterrizar
         </Link>
 
         <div className="navbar-collapse">

@@ -15,7 +15,7 @@ export const ItemCard = ({ id, destination, price, description }) => {
             <h3 className="card-title">{destination.toUpperCase()}</h3>
             <div className="card-text">{description}</div><hr />
             Precio:
-            <p style={{ fontSize: '40px' }}>${price}</p>
+            <p style={{ fontSize: '40px' }}><i class="bi bi-currency-dollar"></i>{price}</p>
             <Link to={`/detail/${id}`}>
               <button type="button" className="btn btn-primary btn-adminbutton">Ver detalle</button>
             </Link>

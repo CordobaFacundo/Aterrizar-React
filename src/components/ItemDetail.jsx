@@ -11,13 +11,13 @@ export const ItemDetail = ({ description, destination, price }) => {
           <div className="col-md-6 mb-md-0 p-md-4">
             <img id="imagenDestino" src={imageUrl} className="w-100" width="550" height="450" /></div>
           <div className="col-md-6 p-4 ps-md-0">
-            <h3 className="card-title">{destination.toUpperCase()}</h3><hr />
+            <h3 className="card-title">{destination}</h3><hr />
             <p className="card-text"><small className="text-muted">Este paquete incluye ida y vuelta</small></p>
             <p>Descripcion : {description}</p>
             <p>Proximamente: salsas</p>
             <p>Proximamente: bebidas</p>
             Precio:
-            <p style={{ fontSize: '40px' }}>${price}</p><hr />
+            <p style={{ fontSize: '40px' }}><i class="bi bi-currency-dollar"></i>{price}</p><hr />
             {/* {
               test == 'button' ?
                 pack.stock > 0 ?

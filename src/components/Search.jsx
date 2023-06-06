@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { getPackByName } from '../helpers/getPackByName'
 import queryString from 'query-string';
 import { useForm } from '../hooks/useForm';
+import { ItemDetail } from './ItemDetail';
 
 export const Search = () => {
 
@@ -14,22 +15,22 @@ export const Search = () => {
 
   const { q = '' } = queryString.parse(location.search);
 
-  const packs = getPackByName(q);
-
   const { searchText, onInputChange } = useForm({
     searchText: q
   });
-
+  const packID = getPackByName(searchText);
+  
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    navigate(`?q=${searchText}`);
+    navigate(`/detail/${packID}`);
+    <ItemDetail { ...packID } />
   }
-
+  
   return (
     <>
       <div className='row' style={{marginLeft: '20px', marginRight: '20px'}}>
 
-        <h4>Paquetes de vuelos a diferentes puntos del pais y exteriores</h4>
+        <h4><i class="bi bi-airplane-fill"></i> Paquetes de vuelos a diferentes puntos del pais y exteriores</h4>
         <hr />
 
         <form className='form-ms' onSubmit={onSearchSubmit}>
